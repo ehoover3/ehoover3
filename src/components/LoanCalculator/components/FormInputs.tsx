@@ -30,6 +30,14 @@ export default function FormInputs({ loan, setLoan }: any) {
           onChange={(e) => setLoan({ ...loan, loanTerm: Number(e.target.value) })}
         />
       </Form.Group>
+      <input
+        style={{ width: "100%" }}
+        type='range'
+        min='1'
+        max='120'
+        value={loanTerm}
+        onChange={(e) => setLoan({ ...loan, loanTerm: Number(e.target.value) })}
+      />
       <Form.Group className='mb-3' controlId='formLoanTermMonths'>
         <Form.Label>Interest Rate (%)</Form.Label>
         <Form.Control
@@ -38,6 +46,14 @@ export default function FormInputs({ loan, setLoan }: any) {
           onChange={(e) => setLoan({ ...loan, interestRate: Number(e.target.value) })}
         />
       </Form.Group>
+      <input
+        style={{ width: "100%" }}
+        type='range'
+        min='1'
+        max='100'
+        value={interestRate}
+        onChange={(e) => setLoan({ ...loan, interestRate: Number(e.target.value) })}
+      />
     </Form>
   );
 }
