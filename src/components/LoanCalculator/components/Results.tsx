@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import calculate from "../utils/Calculate";
 import toCurrency from "../utils/ToCurrency";
-import "./assets/LoanCalculator.css";
+import "../assets/LoanCalculator.css";
 export default function Results({ loan, EULERSNUMBER }: any) {
   let { loanAmount, loanTerm, interestRate } = loan;
 

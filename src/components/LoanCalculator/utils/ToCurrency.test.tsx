@@ -1,6 +1,6 @@
 import toCurrency from "./ToCurrency";
 
-describe("Loan Calculator", () => {
+describe("convertNumbertoCurrency", () => {
   it("should return a formatted positive number", () => {
     const result = toCurrency(100);
     expect(result).toEqual("$100.00");
