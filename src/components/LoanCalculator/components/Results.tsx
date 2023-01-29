@@ -19,7 +19,7 @@ export default function Results({ loan, EULERSNUMBER }: any) {
 
   useEffect(() => {
     setLoanCalculations(calculate(loanAmount, loanTerm, interestRate));
-  }, [loanAmount, loanTerm, interestRate]);
+  }, [loan]);
 
   return (
     <div style={{ width: "25%" }}>
