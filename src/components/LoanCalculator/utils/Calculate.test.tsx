@@ -1,6 +1,3 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-
 import calculate from "./Calculate";
 
 describe("Loan Calculator", () => {
