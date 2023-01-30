@@ -2,8 +2,26 @@ import { useState, useEffect } from "react";
 import calculate from "../utils/Calculate";
 import toCurrency from "../utils/ToCurrency";
 import "../assets/LoanCalculator.css";
-export default function Results({ loan, EULERSNUMBER }: any) {
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+export default function Results({ loan }: any) {
   let { loanAmount, loanTerm, interestRate } = loan;
+
+  let [doughnutChart, setDoughnutChart] = useState({
+    labels: ["Total Interest Paid", "Loan Amount"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [0, 0],
+        backgroundColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+        borderWidth: 0,
+      },
+    ],
+  });
 
   interface loanCalculationsInterface {
     monthlyPayment: number;
@@ -20,6 +38,21 @@ export default function Results({ loan, EULERSNUMBER }: any) {
   useEffect(() => {
     setLoanCalculations(calculate(loanAmount, loanTerm, interestRate));
   }, [loan]);
+
+  useEffect(() => {
+    setDoughnutChart({
+      labels: ["Total Interest Paid", "Loan Amount"],
+      datasets: [
+        {
+          label: "# of Votes",
+          data: [loanCalculations.totalInterestPaid, loanAmount],
+          backgroundColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+          borderWidth: 0,
+        },
+      ],
+    });
+  }, [loanCalculations]);
 
   return (
     <div style={{ width: "25%" }}>
@@ -39,6 +72,8 @@ export default function Results({ loan, EULERSNUMBER }: any) {
         <div>TOTAL PAID:</div>
         <div>{toCurrency(loanCalculations.totalPaid)}</div>
       </div>
+
+      <Doughnut data={doughnutChart} />
     </div>
   );
 }
