@@ -1,9 +1,16 @@
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 
-export default function ProjectCard({ href, symbol, title, description, technicalSkills }: any) {
+export default function ProjectCard({
+  href,
+  backgroundColor,
+  symbol,
+  title,
+  description,
+  technicalSkills,
+}: any) {
   return (
-    <Nav.Link href={href}>
+    <Nav.Link href={href} style={{ margin: "25px" }}>
       <Card style={{ width: "18rem" }}>
         <div
           style={{
@@ -12,7 +19,7 @@ export default function ProjectCard({ href, symbol, title, description, technica
             alignItems: "center",
             width: "100%",
             height: "100px",
-            backgroundColor: "#58cc02",
+            backgroundColor: backgroundColor,
             color: "white",
             fontWeight: "bold",
             fontSize: "75px",
@@ -20,7 +27,7 @@ export default function ProjectCard({ href, symbol, title, description, technica
         >
           {symbol}
         </div>
-        <Card.Body>
+        <Card.Body style={{ backgroundColor: "#f7f7f7" }}>
           <Card.Title style={{ fontWeight: "bold", textAlign: "center" }}>{title}</Card.Title>
           <Card.Text>
             <div>{description}</div>
