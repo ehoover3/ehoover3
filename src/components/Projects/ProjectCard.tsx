@@ -10,29 +10,22 @@ export default function ProjectCard({
   technicalSkills,
 }: any) {
   return (
-    <Nav.Link href={href} style={{ margin: "25px" }}>
-      <Card style={{ width: "18rem" }}>
+    <Nav.Link href={href} className='navLink'>
+      <Card className='card'>
         <div
+          className='cardImg'
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            height: "100px",
             backgroundColor: backgroundColor,
-            color: "white",
-            fontWeight: "bold",
-            fontSize: "75px",
           }}
         >
           {symbol}
         </div>
-        <Card.Body style={{ backgroundColor: "#f7f7f7" }}>
-          <Card.Title style={{ fontWeight: "bold", textAlign: "center" }}>{title}</Card.Title>
+        <Card.Body className='cardBody'>
+          <Card.Title className='cardTitle'>{title}</Card.Title>
           <Card.Text>
             <div>{description}</div>
             <br />
-            <div style={{ fontWeight: "bold", fontStyle: "italic" }}>Technical Skills</div>
+            <div className='cardText'>Technical Skills</div>
             <div>{technicalSkills}</div>
           </Card.Text>
         </Card.Body>

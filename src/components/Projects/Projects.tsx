@@ -1,8 +1,8 @@
-import ProjectCard from "../components/Projects/ProjectCard";
-
+import ProjectCard from "./ProjectCard";
+import "./Projects.css";
 export default function Projects() {
   return (
-    <div style={{ margin: "5%" }}>
+    <div className='Projects' id='Projects'>
       <h1>Projects</h1>
       <ProjectCard
         href='./loancalculator'

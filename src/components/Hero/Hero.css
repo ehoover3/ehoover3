@@ -1,0 +1,39 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 8px solid #c1cbcb;
+}
+
+.margin {
+  margin: 20px;
+}
+
+.buttonContainer {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.textContainer {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgHover:hover {
+  transform: scale(1.1);
+  transition-duration: 0.25s;
+}
+
+.headerFont {
+  font-size: 34px;
+}

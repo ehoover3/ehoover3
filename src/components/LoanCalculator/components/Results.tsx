@@ -55,7 +55,7 @@ export default function Results({ loan }: any) {
   }, [loanCalculations]);
 
   return (
-    <div style={{ width: "25%" }}>
+    <div className='resultsContainer'>
       <div className='flexspacebetween'>
         <div>MONTHLY PAYMENT:</div>
         <div>{toCurrency(loanCalculations.monthlyPayment)}</div>
