@@ -1,5 +1,6 @@
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
+import "./Projects.css";
 
 export default function ProjectCard({
   href,
@@ -15,6 +16,14 @@ export default function ProjectCard({
         <div
           className='cardImg'
           style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100px",
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "75px",
             backgroundColor: backgroundColor,
           }}
         >
