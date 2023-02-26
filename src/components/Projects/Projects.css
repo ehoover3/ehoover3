@@ -1,8 +1,12 @@
 .Projects {
-  height: 100vh;
   border-bottom: 8px solid #c1cbcb;
   padding-left: 25px;
   margin-top: 25px;
+}
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .navLink {
@@ -13,7 +17,7 @@
   width: 18rem;
 }
 
-.cardBody {
+start.cardBody {
   background-color: #f7f7f7;
 }
 

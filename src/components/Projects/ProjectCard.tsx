@@ -1,6 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 import "./Projects.css";
+import { ReactElement } from "react";
 
 export default function ProjectCard({
   href,
@@ -9,7 +10,7 @@ export default function ProjectCard({
   title,
   description,
   technicalSkills,
-}: any) {
+}: any): ReactElement {
   return (
     <Nav.Link href={href} className='navLink'>
       <Card className='card'>
@@ -31,12 +32,12 @@ export default function ProjectCard({
         </div>
         <Card.Body className='cardBody'>
           <Card.Title className='cardTitle'>{title}</Card.Title>
-          <Card.Text>
+          <div>
             <div>{description}</div>
             <br />
             <div className='cardText'>Technical Skills</div>
             <div>{technicalSkills}</div>
-          </Card.Text>
+          </div>
         </Card.Body>
       </Card>
     </Nav.Link>

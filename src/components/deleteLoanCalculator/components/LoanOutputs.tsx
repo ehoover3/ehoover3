@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactElement } from "react";
 import calculate from "../utils/Calculate";
 import toCurrency from "../utils/ToCurrency";
-import "../assets/LoanCalculator.css";
+import "../assets/styles.css";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function Results({ loan }: any) {
+export default function LoanOutputs({ loan }: any): ReactElement {
   let { loanAmount, loanTerm, interestRate } = loan;
 
   let [doughnutChart, setDoughnutChart] = useState({
@@ -55,20 +55,20 @@ export default function Results({ loan }: any) {
   }, [loanCalculations]);
 
   return (
-    <div className='resultsContainer'>
-      <div className='flexspacebetween'>
+    <div>
+      <div>
         <div>MONTHLY PAYMENT:</div>
         <div>{toCurrency(loanCalculations.monthlyPayment)}</div>
       </div>
-      <div className='flexspacebetween'>
+      <div>
         <div>TOTAL INTEREST PAID: </div>
         <div>{toCurrency(loanCalculations.totalInterestPaid)}</div>
       </div>
-      <div className='flexspacebetween'>
+      <div>
         <div>LOAN AMOUNT:</div>
         <div>{toCurrency(loanAmount)}</div>
       </div>
-      <div className='flexspacebetween'>
+      <div>
         <div>TOTAL PAID:</div>
         <div>{toCurrency(loanCalculations.totalPaid)}</div>
       </div>

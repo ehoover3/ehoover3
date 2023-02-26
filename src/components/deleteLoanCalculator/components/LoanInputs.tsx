@@ -1,10 +1,22 @@
+import React, { ReactElement } from "react";
 import Form from "react-bootstrap/Form";
 
-export default function FormInputs({ loan, setLoan }: any) {
+type LoanInputsType = {
+  loan: LoanType;
+  setLoan: any;
+};
+
+type LoanType = {
+  loanAmount: number;
+  loanTerm: number;
+  interestRate: number;
+};
+
+export default function LoanInputs({ loan, setLoan }: LoanInputsType): ReactElement {
   let { loanAmount, loanTerm, interestRate } = loan;
 
   return (
-    <Form className='width25percent'>
+    <Form>
       <Form.Group className='mb-3' controlId='formLoanAmount'>
         <Form.Label>Loan Amount ($)</Form.Label>
         <Form.Control
@@ -14,7 +26,6 @@ export default function FormInputs({ loan, setLoan }: any) {
         />
       </Form.Group>
       <input
-        className='width100percent'
         type='range'
         min='1'
         max='1000000'
@@ -31,7 +42,6 @@ export default function FormInputs({ loan, setLoan }: any) {
         />
       </Form.Group>
       <input
-        className='width100percent'
         type='range'
         min='1'
         max='120'

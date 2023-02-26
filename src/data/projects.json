@@ -1,0 +1,67 @@
+[
+  {
+    "href": "./loancalculator",
+    "symbol": "%",
+    "title": "Loan Calculator",
+    "description": "Enter loan amount, term, and rate to calculate the monthly payment, total interest, & total amount paid",
+    "technicalSkills": "React useState and useEffect",
+    "backgroundColor": "#1cb0f6",
+    "color": "white"
+  },
+  {
+    "href": "./stocktracker",
+    "symbol": "$",
+    "title": "Stock Tracker",
+    "description": "Enter the stock symbol to get update finacial information",
+    "technicalSkills": "React useState and useEffect, Axios fetch request to an API",
+    "backgroundColor": "#ff4b4b",
+    "color": "white"
+  },
+
+  {
+    "href": "./payrollsystem",
+    "symbol": "$",
+    "title": "Payroll System",
+    "description": "Enter the stock symbol to get update finacial information",
+    "technicalSkills": "React useState and useEffect, Axios fetch request to an API",
+    "backgroundColor": "#ffc800",
+    "color": "#4b4b4b"
+  },
+
+  {
+    "href": "./ecommerce",
+    "symbol": "$",
+    "title": "eCommerce",
+    "description": "Enter the stock symbol to get update finacial information",
+    "technicalSkills": "React useState and useEffect, Axios fetch request to an API",
+    "backgroundColor": "#ff9600",
+    "color": "white"
+  },
+  {
+    "href": "./socialmedia",
+    "symbol": "$",
+    "title": "Social Media",
+    "description": "Enter the stock symbol to get update finacial information",
+    "technicalSkills": "React useState and useEffect, Axios fetch request to an API",
+    "backgroundColor": "#ce82ff",
+    "color": "white"
+  },
+  {
+    "href": "./nutritionlabel",
+    "symbol": "$",
+    "title": "Nutrition Label",
+    "description": "Enter the stock symbol to get update finacial information",
+    "technicalSkills": "React useState and useEffect, Axios fetch request to an API",
+    "backgroundColor": "#2b70c9",
+    "color": "white"
+  },
+  {
+    "href": "./cognitivedissonancechecker",
+    "symbol": "$",
+    "title": "Logic Checker",
+    "description": "Enter the stock symbol to get update finacial information",
+    "technicalSkills": "React useState and useEffect, Axios fetch request to an API",
+    "backgroundColor": "#ffcaff",
+    "color": "#4b4b4b"
+  }
+]
