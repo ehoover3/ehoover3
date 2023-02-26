@@ -16,8 +16,8 @@ export default function Results({ loan }: any) {
       {
         label: "# of Votes",
         data: [0, 0],
-        backgroundColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+        backgroundColor: ["rgba(100,100,100,1)", "rgba(200, 200, 200, 1)"],
+        borderColor: ["rgba(100,100,100,1)", "rgba(200, 200, 200, 1)"],
         borderWidth: 0,
       },
     ],
@@ -55,7 +55,7 @@ export default function Results({ loan }: any) {
   }, [loanCalculations]);
 
   return (
-    <div style={{ width: "25%" }}>
+    <div className='resultsContainer'>
       <div className='flexspacebetween'>
         <div>MONTHLY PAYMENT:</div>
         <div>{toCurrency(loanCalculations.monthlyPayment)}</div>

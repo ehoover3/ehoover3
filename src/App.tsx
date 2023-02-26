@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Projects from "./components/Projects/Projects";
 import Navigation from "./components/Navigation/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoanCalculator from "./pages/LoanCalculator";
+import LoanCalculator from "./components/LoanCalculator/page";
 
 function App() {
   return (
-    <>
+    <div>
       <Navigation />
       <BrowserRouter>
         <Routes>
@@ -20,7 +20,7 @@ function App() {
           <Route path='/loancalculator' element={<LoanCalculator />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ export default function FormInputs({ loan, setLoan }: any) {
   let { loanAmount, loanTerm, interestRate } = loan;
 
   return (
-    <Form style={{ width: "25%" }}>
+    <Form className='width25percent'>
       <Form.Group className='mb-3' controlId='formLoanAmount'>
         <Form.Label>Loan Amount ($)</Form.Label>
         <Form.Control
@@ -14,7 +14,7 @@ export default function FormInputs({ loan, setLoan }: any) {
         />
       </Form.Group>
       <input
-        style={{ width: "100%" }}
+        className='width100percent'
         type='range'
         min='1'
         max='1000000'
@@ -31,7 +31,7 @@ export default function FormInputs({ loan, setLoan }: any) {
         />
       </Form.Group>
       <input
-        style={{ width: "100%" }}
+        className='width100percent'
         type='range'
         min='1'
         max='120'
@@ -47,7 +47,7 @@ export default function FormInputs({ loan, setLoan }: any) {
         />
       </Form.Group>
       <input
-        style={{ width: "100%" }}
+        className='width100percent'
         type='range'
         min='1'
         max='100'

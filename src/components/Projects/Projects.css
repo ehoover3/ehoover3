@@ -1,0 +1,28 @@
+.Projects {
+  height: 100vh;
+  border-bottom: 8px solid #c1cbcb;
+  padding-left: 25px;
+  margin-top: 25px;
+}
+
+.navLink {
+  margin: 25px;
+}
+
+.card {
+  width: 18rem;
+}
+
+.cardBody {
+  background-color: #f7f7f7;
+}
+
+.cardTitle {
+  font-weight: "bold";
+  text-align: "center";
+}
+
+.cardText {
+  font-weight: bold;
+  font-style: italic;
+}
