@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { ReactElement } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 const pages = ["Projects", "About", "Contact"];
 
-function Navigation() {
+function Navigation(): ReactElement {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -24,7 +24,7 @@ function Navigation() {
   };
 
   return (
-    <AppBar position='fixed'>
+    <AppBar position='sticky'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Typography

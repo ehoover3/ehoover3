@@ -29,11 +29,51 @@
   align-items: center;
 }
 
-.imgHover:hover {
+.heroImagesContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.frontImage:hover,
+.backImage:hover {
   transform: scale(1.1);
-  transition-duration: 0.25s;
+  /* transition: 300ms ease-out; */
 }
 
 .headerFont {
   font-size: 34px;
+}
+
+.frontImage {
+  transition: all 300ms ease-out;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* transition: 300ms ease-out; */
+}
+.backImage {
+  transition: all 300ms ease-out;
+  position: absolute;
+  top: 6%;
+  left: 12%;
+  z-index: -1;
+  width: 400px;
+  height: 300px;
+}
+
+.heroText {
+  z-index: 4;
+  position: absolute;
+  text-align: center;
+  /* outline: 5px solid red; */
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  width: 350px;
+  height: 150px;
+  top: 40%;
+  left: 17%;
+  color: white;
 }

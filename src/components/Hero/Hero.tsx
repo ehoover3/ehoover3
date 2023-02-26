@@ -1,12 +1,36 @@
 import laptop from "../../assets/laptop.png";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
+import Nav from "react-bootstrap/Nav";
 import "./Hero.css";
-export default function Hero() {
+import { ReactElement, useState } from "react";
+import projects from "../../data/projects.json";
+
+export default function Hero(): ReactElement {
+  const [projectIndex, setProjectIndex] = useState(0);
+
+  function handlePrevButton() {
+    if (projectIndex <= 0) setProjectIndex(projects.length - 1);
+    else setProjectIndex(projectIndex - 1);
+  }
+  function handleNextButton() {
+    if (projects.length - 1 <= projectIndex) setProjectIndex(0);
+    else setProjectIndex(projectIndex + 1);
+  }
+
   return (
     <div className='hero'>
       <div className='margin'>
-        <img src={laptop} alt='' className='imgHover' />
+        <Nav.Link href={projects[projectIndex].href} className='heroImagesContainer'>
+          <img src={laptop} alt='laptop' className='imgHover frontImage ' />
+          <div className='heroText' style={{ color: projects[projectIndex].color }}>
+            {projects[projectIndex].title}
+          </div>
+          <div
+            style={{ backgroundColor: projects[projectIndex].backgroundColor }}
+            className='imgHover backImage'
+          ></div>
+        </Nav.Link>
       </div>
       <div className='buttonContainer'>
         <Button
@@ -17,10 +41,11 @@ export default function Hero() {
               <SendIcon />
             </div>
           }
+          onClick={handlePrevButton}
         >
           Prev
         </Button>
-        <Button variant='contained' size='large' endIcon={<SendIcon />}>
+        <Button variant='contained' size='large' endIcon={<SendIcon />} onClick={handleNextButton}>
           Next
         </Button>
       </div>
