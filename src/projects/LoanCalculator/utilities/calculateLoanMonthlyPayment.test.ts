@@ -1,8 +1,8 @@
 import calculateLoanMonthlyPayment from "./calculateLoanMonthlyPayment";
 
-test("amount: 10000, monthlyTerm: 100, interestRate: 10", () => {
-  const result = calculateLoanMonthlyPayment(10000, 120, 10);
-  expect(result).toBe(132.15);
+test("principal: 10000, interestRate: 10, loanTermInYears: 30", () => {
+  const result = calculateLoanMonthlyPayment(1000, 10, 30);
+  expect(result).toBe(833.33);
 });
 
 // test("amount: -100, monthlyTerm: 100, interestRate: 10", () => {

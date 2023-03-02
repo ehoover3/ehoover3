@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import calculateLoanMonthlyPayment from "./utilities/calculateLoanMonthlyPayment";
 
 export default function LoanCalculator() {
   // inputs
-  const [loanAmount, setLoanAmount] = useState(0);
-  const [loanTerm, setLoanTerm] = useState(0);
-  const [loanInterestRate, setLoanInterestRate] = useState(0);
+  const [principal, setLoanAmount] = useState(0);
+  const [interestRate, setLoanInterestRate] = useState(0);
+  const [loanTermInYears, setLoanTermInYears] = useState(0);
 
   // outputs
-  const [loanMonthlyPayment, setLoanMonthlyPayment] = useState(0);
+  const [loanMonthlyPayment, setLoanMonthlyPayment] = useState("");
 
   useEffect(() => {
-    let monthlyPayment = calculateLoanMonthlyPayment(loanAmount, loanTerm, loanInterestRate);
+    let monthlyPayment = calculateLoanMonthlyPayment(principal, interestRate, loanTermInYears);
+    console.log("monthlyPayment: ", monthlyPayment);
     setLoanMonthlyPayment(monthlyPayment);
-  }, [loanAmount, loanTerm, loanInterestRate]);
+    console.log("principal: ", principal);
+    console.log("interestRate: ", interestRate);
+    console.log("loanTermInYears: ", loanTermInYears);
+  }, [principal, interestRate, loanTermInYears]);
 
   return (
     <div>
@@ -31,15 +35,15 @@ export default function LoanCalculator() {
 
         <div>
           <label>
-            <div>Term (Years)</div>
-            <input onChange={(e) => setLoanTerm(e.target.valueAsNumber)} type='number' />
+            <div>Interest Rate</div>
+            <input onChange={(e) => setLoanInterestRate(e.target.valueAsNumber)} type='number' />
           </label>
         </div>
 
         <div>
           <label>
-            <div>Interest Rate</div>
-            <input onChange={(e) => setLoanInterestRate(e.target.valueAsNumber)} type='number' />
+            <div>Term (Years)</div>
+            <input onChange={(e) => setLoanTermInYears(e.target.valueAsNumber)} type='number' />
           </label>
         </div>
       </form>
