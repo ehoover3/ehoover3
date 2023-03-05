@@ -51,7 +51,7 @@ import calculateLoanMonthlyPayment from "./LoanPaymentInMonths";
 // interestRate: number,
 // loanTermInYears: number
 
-describe("calculateLoanMonthlyPayment", () => {
+describe("calculateLoanMonthlyPayment with parameters: amount, termInYears, and interestRate", () => {
   it('returns "Invalid input" when any input is <= 0', () => {
     expect(calculateLoanMonthlyPayment(1, 0, 1)).toBe("Invalid input");
     expect(calculateLoanMonthlyPayment(0, 1, 1)).toBe("Invalid input");

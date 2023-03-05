@@ -1,9 +1,9 @@
 import React from "react";
 
 interface LoanAmortizationProps {
-  principal: number; // the amount borrowed
-  interestRate: number; // the annual interest rate
-  loanTerm: number; // the length of the loan in months
+  principal: number;
+  interestRate: number;
+  loanTerm: number;
 }
 
 interface PaymentData {
@@ -19,12 +19,14 @@ const AmortizationSchedule: React.FC<LoanAmortizationProps> = ({
   interestRate,
   loanTerm,
 }) => {
-  const monthlyRate = interestRate / 1200; // monthly interest rate
-  const monthlyPayment = (principal * monthlyRate) / (1 - (1 + monthlyRate) ** -loanTerm); // formula for calculating monthly payment
+  // TODO make monthlyRate more readable by breaking up the 1200 to 100 and 12
+  const monthlyRate = interestRate / 1200;
+  const monthlyPayment = (principal * monthlyRate) / (1 - (1 + monthlyRate) ** -loanTerm);
 
-  // create an array of payment data objects
   const paymentData: PaymentData[] = [];
+
   let balance = principal;
+
   for (let i = 1; i <= loanTerm; i++) {
     const interestPaid = balance * monthlyRate;
     const principalPaid = monthlyPayment - interestPaid;
