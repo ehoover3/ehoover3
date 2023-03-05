@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import calculateLoanMonthlyPayment from "./utilities/calculateLoanMonthlyPayment";
+import calculateLoanMonthlyPayment from "./utilities/LoanPaymentInMonths";
+import AmortizationSchedule from "./utilities/AmortizationSchedule";
 
 export default function LoanCalculator() {
   // inputs
-  const [principal, setLoanAmount] = useState(0);
-  const [interestRate, setLoanInterestRate] = useState(0);
+  const [principal, setPrincipal] = useState(0);
+  const [interestRate, setInterestRate] = useState(0);
   const [loanTermInYears, setLoanTermInYears] = useState(0);
 
   // outputs
@@ -12,11 +13,7 @@ export default function LoanCalculator() {
 
   useEffect(() => {
     let monthlyPayment = calculateLoanMonthlyPayment(principal, interestRate, loanTermInYears);
-    console.log("monthlyPayment: ", monthlyPayment);
     setLoanMonthlyPayment(monthlyPayment);
-    console.log("principal: ", principal);
-    console.log("interestRate: ", interestRate);
-    console.log("loanTermInYears: ", loanTermInYears);
   }, [principal, interestRate, loanTermInYears]);
 
   return (
@@ -29,14 +26,14 @@ export default function LoanCalculator() {
         <div>
           <label>
             <div>Amount</div>
-            <input onChange={(e) => setLoanAmount(e.target.valueAsNumber)} type='number' />
+            <input onChange={(e) => setPrincipal(e.target.valueAsNumber)} type='number' />
           </label>
         </div>
 
         <div>
           <label>
             <div>Interest Rate</div>
-            <input onChange={(e) => setLoanInterestRate(e.target.valueAsNumber)} type='number' />
+            <input onChange={(e) => setInterestRate(e.target.valueAsNumber)} type='number' />
           </label>
         </div>
 
@@ -50,6 +47,11 @@ export default function LoanCalculator() {
 
       {/* outputs */}
       <h2>Monthly Payment: ${loanMonthlyPayment}</h2>
+      <AmortizationSchedule
+        principal={principal}
+        interestRate={interestRate}
+        loanTerm={loanTermInYears}
+      />
     </div>
   );
 }
